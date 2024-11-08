@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFF8E8;
+        }
+    
+        .login-container {
+            width: 350px;
+            text-align: center;
+            padding: 40px;
+            background-color: #F7EED3;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            margin: 0 0 20px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .login-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: solid #fdfdfd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #070308;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-container button:hover {
+            background-color: #4b4a4a;
+        }
+
+        .login-container .links {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .login-container .links a {
+            color: #ec98f7;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .login-container .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Deebo</h2>
+        <img src="/Users/paulusabraham/Desktop/Deebo/hoh.JPG" alt="Profile Picture"> <!-- Use a relative path if possible -->
+        <form id="loginForm" onsubmit="submitForm(event)">
+            <input type="password" id="passwordInput" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevents the default form submission behavior
+
+            // Get the password input value
+            var password = document.getElementById("passwordInput").value;
+
+            // Set the correct password
+            var correctPassword = "Deebo710";
+
+            // Perform validation
+            if (password === "") {
+                alert("Please enter a password");
+            } else if (password === correctPassword) {
+                alert("Login successful!");
+                
+                // Redirect to another page
+                window.location.href = "HOME.html";
+            } else {
+                alert("Incorrect password. Please lock in bruh.");
+            }
+        }
+    </script>
+
+</body>
+</html>
